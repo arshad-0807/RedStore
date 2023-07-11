@@ -10,7 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Oxygen&family=Poppins:wght@200;300;400;600;700&family=Roboto+Slab&family=Sono:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="media.css">
-    <title>My Cart-Redstore</title>
+    <title>Redstore</title>
 </head>
 
 <body>
@@ -28,85 +28,51 @@
                     <li><a href="account.html">Account</a></li>
                 </ul>
             </nav>
-            <img src="images/cart.png" class="cart">
+            <a href="cart.html"><img src="images/cart.png" class="cart"></a>
             <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
         </div>
     </div>
-    <!-- -----------------------------------------------cart item details------------------ -->
-    <div class="small container cart-page">
-        <table>
-            <tr>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Subtotal</th>
-            </tr>
 
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="images/buy-1.jpg" >
-                        <div>
-                            <p>Red Printed Tshirt</p>
-                            <small>Price: $49.00</small>
-                            <br>
-                            <a href="#">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td>Qty<input type="number" value="1" min="1" max="5"></td>
-                <td>$49.00</td>
-            </tr>
+    <!-- --------------------------------------------account page----------------------- -->
 
-            <td>
-                <div class="cart-info">
-                    <img src="images/buy-2.jpg" >
-                    <div>
-                        <p>Sport Shoes</p>
-                        <small>Price: $29.00</small>
-                        <br>
-                        <a href="#">Remove</a>
-                    </div>
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/image1.png" alt="">
                 </div>
-            </td>
-            <td>Qty<input type="number" value="1" min="1" max="5"></td>
-            <td>$29.00</td>
-        </tr>
 
-        <td>
-            <div class="cart-info">
-                <img src="images/buy-3.jpg" >
-                <div>
-                    <p>Men's TrackPant</p>
-                    <small>Price: $35.00</small>
-                    <br>
-                    <a href="#">Remove</a>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="signin()">Sign In</span>
+                            <span onclick="signup()">Sign Up</span>
+                            <hr id="Indicator">
+                        </div>
+
+                        <form id="SigninForm">
+                            <input type="text" placeholder="UserName">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Sign In</button>
+                            <a href="">Forgot Password</a>
+                        </form>
+
+                        <form id="SignupForm">
+                            <input type="text" placeholder="UserName">
+                            <input type="email" placeholder="Enter Your Email">
+                            <input type="password" placeholder="Set Password">
+                            <button type="submit" class="btn">Sign Up</button>
+
+                        </form>
+                    </div>
                 </div>
             </div>
-        </td>
-        <td>Qty<input type="number" value="1" min="1" max="5"></td>
-        <td>$35.00</td>
-    </tr>
-        </table>
-
-        <div class="total-price">
-            <table>
-                <tr>
-                    <td>Subtotal</td>
-                    <td>$113.00</td>
-                </tr>
-                <tr>
-                    <td>Taxes</td>
-                    <td>$6</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>$119.00</td>
-                </tr>
-            </table>
         </div>
     </div>
-    
-    <!-- ---------------------------------------------------footer------------------------------------- -->
+
+
+    <!-- ----------------------footer------------------------------------------------------>
+
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -147,6 +113,24 @@
     </div>
 
     <script src="app.js"></script>
+
+    <script>
+        var SigninForm = document.getElementById("SigninForm");
+        var SignupForm = document.getElementById("SignupForm");
+        var Indicator = document.getElementById("Indicator");
+
+        function signup() {
+            SignupForm.style.transform = "translateX(0px)";
+            SigninForm.style.transform = "translateX(0px)";
+            Indicator.style.transform = "translateX(100px)";
+        }
+
+        function signin() {
+            SignupForm.style.transform = "translateX(300px)";
+            SigninForm.style.transform = "translateX(300px)";
+            Indicator.style.transform = "translateX(0px)";
+        }
+    </script>
 
 </body>
 
